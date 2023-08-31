@@ -10,7 +10,6 @@ const handleCategory = async() =>{
         `;
         tabContainer.appendChild(div);
     });
-
     // console.log(data.data);
 };
 // videos section
@@ -37,7 +36,8 @@ const handleLoadVideos = async (categoryId) => {
                 <p>${videos.title}</p>
             </h2>
             <div>
-                <h5 class = "flex items-center gap-1">${videos?.authors[0].profile_name}
+                <h5 class = "flex items-center gap-1">
+                <div>${videos?.authors[0].profile_name}</div>
                 ${videos?.authors[0].verified?
                 `<img src="images/verified.png" alt="">`: ''}
                 </h5>
