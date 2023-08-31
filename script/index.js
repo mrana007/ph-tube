@@ -6,7 +6,7 @@ const handleCategory = async() =>{
     data.data.forEach((category) => {
         const div = document.createElement('div');
         div.innerHTML = `
-        <a onclick = "handleLoadVideo(${category.category_id})" class="tab bg-gray-300 rounded-md">${category.category}</a>
+        <a onclick = "handleLoadVideos(${category.category_id})" class="tab font-medium bg-gray-300 rounded-md">${category.category}</a>
         `;
         tabContainer.appendChild(div);
     });
@@ -14,10 +14,11 @@ const handleCategory = async() =>{
     // console.log(data.data);
 };
 // videos section
-const handleLoadVideo = async (categoryId) => {
+const handleLoadVideos = async (categoryId) => {
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`)
     const data = await response.json();
     const videoContainer = document.getElementById('video-container');
+    videoContainer.textContent = '';
     data.data.forEach((videos) =>{
         // console.log(videos);
         const div = document.createElement('div');
@@ -33,11 +34,12 @@ const handleLoadVideo = async (categoryId) => {
                     <img src = ${videos?.authors[0].profile_picture}>
                 </div>
             </div>
-                ${videos.title}
+                <p>${videos.title}</p>
             </h2>
             <div>
-                <h5>${videos?.authors[0].profile_name}
-                ${videos?.authors[0].verified}
+                <h5 class = "flex items-center gap-1">${videos?.authors[0].profile_name}
+                ${videos?.authors[0].verified?
+                `<img src="images/verified.png" alt="">`: ''}
                 </h5>
                 <small>${videos?.others.views}</small>
             </div>
@@ -45,7 +47,7 @@ const handleLoadVideo = async (categoryId) => {
         </div>
         `;
         videoContainer.appendChild(div);
-    })
+    });
     // console.log(data.data);
 };
 
