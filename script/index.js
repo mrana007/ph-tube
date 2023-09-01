@@ -18,13 +18,21 @@ const handleLoadVideos = async (categoryId) => {
     const data = await response.json();
     const videoContainer = document.getElementById('video-container');
     videoContainer.textContent = '';
+    const drawingVideos = document.getElementById('drawing-videos')
+    if(data.data.length ===0){
+        drawingVideos.classList.remove('hidden')
+    }
+    else{
+        drawingVideos.classList.add('hidden')
+    }
     data.data.forEach((videos) =>{
         // console.log(videos);
         const div = document.createElement('div');
         div.innerHTML = `
         <div class = "card bg-base-100">
-        <figure>
+        <figure class ="relative">
             <img class= "h-52" src = ${videos?.thumbnail}>
+            <span class = "absolute right-11 bottom-2 bg-black text-white">${videos?.others.posted_date}</span>
         </figure>
         <div class = "card-body">
             <h2 class = "card-title">
@@ -52,4 +60,5 @@ const handleLoadVideos = async (categoryId) => {
 };
 
 handleCategory();
+handleLoadVideos(1000);
 
