@@ -13,21 +13,20 @@
         <!-- navbar start from here -->
         <div class="navbar bg-base-100">
             <div class="navbar-start">
-              <div class="dropdown">
+              <!-- <div class="dropdown">
                 <label tabindex="0" class="btn btn-ghost lg:hidden">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                 </label>
                 <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                     <a class="btn normal-case">Sort by view</a>
                 </ul>
-              </div>
+              </div> -->
               <img src="images/Logo.png" alt="">
             </div>
-            <div class="navbar-center hidden lg:flex">
-                <a class="btn normal-case">Sort by view</a>
+            <div class="navbar-center lg:flex">
+                <a id="sort-view" class="btn normal-case">Sort by view</a>
             </div>
             <div class="navbar-end">
-              <!-- <a class="btn bg-red-500 text-white">Blog</a> -->
               <a href="blog.html" class="btn bg-red-500 text-white">Blog</a>
             </div>
           </div>
@@ -39,26 +38,22 @@
 
     <div class="tab-container w-full">
         <div id="tab-container" class="tabs tabs p-5 m-auto text-center flex justify-center gap-4">
-            <!-- <a class="tab bg-red-500 rounded-md text-white">All</a> 
+            <!-- <a class="tab">All</a> 
             <a class="tab">Music</a> 
             <a class="tab">Comedy</a>
             <a class="tab">Drawing</a> -->
         </div>
     </div>
-    <!-- <div id="drawing-videos" class="hidden text-center my-8">
-      <div>
-        <img src="images/Icon.png" alt="">
-        <p>opps</p>
-      </div>
-    </div> -->
 
-    <!-- card container -->
-
+    <!-- video container -->
 
     <div id="video-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">        
     </div>
+    
+    <!-- drawing videos section -->
+
     <div id="drawing-videos" class="hidden">
-      <img class="mx-auto justify-center" src="images/Icon.png" alt="">
+      <img class="mx-auto justify-center pt-24" src="images/Icon.png" alt="">
       <p class="text-center text-2xl font-bold mt-8">Oops!! Sorry, There is no <br> content here</p>
     </div>
 
