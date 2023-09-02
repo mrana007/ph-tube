@@ -10,9 +10,6 @@ const handleCategory = async() =>{
         `;
         tabContainer.appendChild(div);
     });
-    // const sort = document.getElementById('sort-view')
-    // data.sort((a, b)=>perseInt(b.others.views)-perseInt(a.others.views))
-    // console.log(data.data);
 };
 // videos section
 const handleLoadVideos = async (categoryId) => {
@@ -33,8 +30,8 @@ const handleLoadVideos = async (categoryId) => {
         div.innerHTML = `
         <div class = "card bg-base-100">
         <figure class ="relative">
-            <img class= "h-52" src = ${videos?.thumbnail}>
-            <span class = "absolute right-6 bottom-1 bg-black text-white">
+            <img class= "h-52 w-80" src = ${videos?.thumbnail}>
+            <span class = "absolute right-1 bottom-1 bg-black text-white">
             ${(videos?.others?.posted_date)?timeDuration(videos?.others?.posted_date):''}</span>
         </figure>
         <div class = "card-body">
@@ -66,14 +63,7 @@ const timeDuration = sec =>{
     var hours = Math.floor(sec/3600);
     var mins = Math.floor((sec % 3600) /60);
     return `<div>${hours} hrs ${mins} min ago</div>`
-}
-// function timeDuration(sec){
-//     let hrs = Math.floor(sec/3600);
-//     let mins = Math.floor((sec % 3600) /60);
-//     return `<div>${hrs} hrs ${mins} min ago</div>`
-// }
+};
+
 handleCategory();
 handleLoadVideos(1000);
-
-// ${(videos?.others?.posted_date)?showTime(videos?.others?.posted_date):''}
-// ${showTime(videos?.others.posted_date)}
